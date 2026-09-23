@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#151d1b">
+
+  <title>Тайны старого Богородска</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Prata&display=swap" rel="stylesheet">
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<main>
+
+  <header>
+    <a class="brand" href="#">
+      <span>Б</span>
+      Тайны Богородска
+    </a>
+
+    <div class="score">
+      Пройдено
+      <b id="progress">0 / 10</b>
+    </div>
+  </header>
+
+  <section class="map-wrap">
+
+    <div id="map" aria-label="Карта маршрута по Ногинску"></div>
+
+    <div class="intro-card" id="introCard">
+
+      <span class="tag">Пешеходный квест</span>
+
+      <h1>
+        Тайны старого<br>
+        Богородска
+      </h1>
+
+      <p>
+        Исследуй десять исторических мест Ногинска.
+        Теперь маршрут полностью свободный: выбирай любую
+        точку на карте, изучай её историю и проходи задания
+        в удобном порядке.
+      </p>
+
+      <button id="startBtn" class="main-btn">
+        Начать исследование →
+      </button>
+
+    </div>
+
+    <article class="place-card hidden" id="placeCard">
+
+      <div class="place-top">
+
+        <div class="step" id="placeNumber">
+          01
+        </div>
+
+        <div>
+          <span class="tag">Историческое место</span>
+
+          <h2 id="placeName"></h2>
+
+          <p class="place-location" id="placeHint"></p>
+        </div>
+
+      </div>
+
+      <div class="place-info">
+
+        <h3>Об этом месте</h3>
+
+        <p id="placeDescription"></p>
+
+        <div class="interesting">
+          <span class="interesting-icon">✦</span>
+
+          <div>
+            <strong>Интересный факт</strong>
+            <p id="placeFact"></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="place-actions">
+
+        <button
+          id="routeBtn"
+          class="main-btn route-btn"
+        >
+          Построить маршрут
+        </button>
+
+        <button
+          id="arrivedBtn"
+          class="main-btn"
+        >
+          Я на месте
+        </button>
+
+        <button
+          id="closePlaceBtn"
+          class="secondary-btn"
+        >
+          Вернуться к карте
+        </button>
+
+      </div>
+
+      <div
+        id="routeStatus"
+        class="route-status hidden"
+        aria-live="polite"
+      ></div>
+
+    </article>
+
+  </section>
+
+</main>
+
+
+<dialog id="quiz">
+
+  <button
+    class="close"
+    id="closeQuiz"
+    aria-label="Закрыть"
+  >
+    ×
+  </button>
+
+  <span class="tag" id="quizTag"></span>
+
+  <h2 id="question"></h2>
+
+  <div id="answers" class="answers"></div>
+
+  <p
+    id="feedback"
+    class="feedback"
+    aria-live="polite"
+  ></p>
+
+  <div
+    id="fact"
+    class="fact hidden"
+  ></div>
+
+  <button
+    id="quizBackBtn"
+    class="secondary-btn quiz-back hidden"
+  >
+    Вернуться к карте
+  </button>
+
+</dialog>
+
+
+<dialog id="finish" class="finish">
+
+  <span class="finish-mark">✓</span>
+
+  <span class="tag">
+    Маршрут завершён
+  </span>
+
+  <h2>
+    Тайны старого Богородска раскрыты
+  </h2>
+
+  <p>
+    Ты исследовал все десять исторических мест
+    Ногинска и прошёл весь квест.
+  </p>
+
+  <button
+    class="main-btn"
+    id="restartBtn"
+  >
+    Пройти снова
+  </button>
+
+</dialog>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

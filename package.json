@@ -1,0 +1,18 @@
+{
+  "name": "tayny-bogorodsk",
+  "version": "1.0.0",
+  "description": "Квест по десяти достопримечательностям Ногинска на основе экскурсии «Тайны старого Богородска». Пешеходный маршрут строится по дорожкам и улицам через OpenStreetMap. Кнопка «Я на месте» открывает вопрос без проверки геопозиции.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2"
+  }
+}
